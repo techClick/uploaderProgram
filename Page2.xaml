@@ -1,0 +1,43 @@
+﻿<Page x:Class="uploader.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:uploader"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page2">
+    <Grid>
+        <WebBrowser x:Name="previewBrowser" Grid.Column="1" Margin ="400 0 0 0" HorizontalAlignment="Left" Height="350" Width ="400" />
+        <StackPanel Margin ="30 0 0 0" HorizontalAlignment="Left" Width ="350" >
+            <TextBlock Margin ="0 60 0 0" >
+                Email
+            </TextBlock>
+            <TextBox Margin ="0 0 0 0" Name ="email" Padding="2" />
+            <TextBlock Margin ="0 10 0 0" >
+                Identification Number
+            </TextBlock>
+            <TextBox Margin ="0 0 0 0" Name ="ID" Padding="2" />
+            <Button Margin ="0 30 0 0" Panel.ZIndex="1" Width ="100" Name="uploadFileB" Click="LoadFiles">
+                Load File(s)
+            </Button>
+            <TextBlock Margin ="0 25 0 0" Name="fileProgress">
+                Saved files will appear below
+            </TextBlock>
+            <TextBlock Margin ="0 5 0 0" Name="fileName" Visibility="Collapsed">
+                Downloading file 1 (of 1)
+            </TextBlock>
+            <TextBlock Margin ="0 5 0 0" Name="progressShow" Visibility="Collapsed">
+                Progress:
+            </TextBlock>
+            <ProgressBar Name="progressBar1" Height="15" Visibility="Collapsed"></ProgressBar>
+            <ListBox Name="lbFiles"  FontSize="16" >
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <EventSetter Event="MouseDoubleClick" Handler="doubleClickFile"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Page>
