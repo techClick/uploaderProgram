@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Forms;
+using System.IO;
 
 namespace uploader
 {
@@ -17,7 +12,9 @@ namespace uploader
         OleDbConnection cn = new OleDbConnection();
         public void saveData(string name, string email, object docs, string resultNum)
         {
-            cn.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\IKECHI\Desktop\workCH.accdb";
+            string filePath = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
+            filePath = Directory.GetParent(Directory.GetParent(filePath).FullName).FullName;
+            cn.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = "+filePath+"\\workCH.accdb";
             cmd.Connection = cn;
             try
             {
@@ -37,7 +34,7 @@ namespace uploader
             catch (Exception e)
             {
                 cn.Close();
-                //System.Windows.MessageBox.Show("MICROSOFT ACCESS ERROR: " + e.Message.ToString());
+                System.Windows.MessageBox.Show("MICROSOFT ACCESS ERROR: " + e.Message.ToString());
             }
         }
     }
