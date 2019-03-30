@@ -12,7 +12,7 @@ namespace uploader
         private SqlDataReader dr;
         public void saveData(string name, string email, object docs, string resultNum)
         {
-            ConnectionString = @"Server=." + "\\" + "SQLEXPRESS;Database=workCH;uid=debuchy8;pwd=delabEGO2345";
+            ConnectionString = @"Server=." + "\\" + "SQLEXPRESS;Database=reodumm;uid=reallyty;pwd=esnoyy";
             cn = new SqlConnection(ConnectionString);
             try
             {
