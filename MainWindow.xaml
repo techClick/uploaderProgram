@@ -1,0 +1,23 @@
+﻿<Window x:Class="uploader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uploader"
+        xmlns:filePaths="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Uploader" Height="530" HorizontalAlignment="Left" Width="850" ResizeMode="CanMinimize" 
+            Foreground="Black"  WindowStyle="SingleBorderWindow">
+    <Grid>
+        <StackPanel Margin="80 0 0 0" Height="53" Width="760" VerticalAlignment="Top" HorizontalAlignment="center" 
+                    Background="#FFA4EA83">
+            <TextBlock Margin="13 6 0 0" Name="heading" HorizontalAlignment="Left" FontSize="26" FontWeight="Bold">
+                UPLOAD DOCUMENTS</TextBlock>
+        </StackPanel>
+        <StackPanel Margin="0 0 0 0" Height="530" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#FF494949">
+            <Button Width ="60" Height ="30" FontSize ="15" Content="Upload" Margin="0 10 0 0" Click="PageOne"/>
+            <Button Width ="60" Height ="30" FontSize ="15"  Content="View" Margin="0 10 0 0" Click="PageTwo"/>
+        </StackPanel>
+        <Frame x:Name="framer" NavigationUIVisibility="Hidden" Source="Page1.xaml"/>
+    </Grid>
+</Window>

@@ -1,0 +1,54 @@
+﻿<Page x:Class="uploader.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:uploader"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      d:DesignHeight="530" d:DesignWidth="850"
+      Title="Page1">
+    <Grid>
+        <StackPanel Margin ="80 53 0 0" Width ="770" Height="55" VerticalAlignment="Top" Background="#FFE4E4E4" >
+            <TextBlock Width ="50" FontSize="14" HorizontalAlignment="Left" Margin ="10 4 0 0" >
+                Name
+            </TextBlock>
+            <TextBox Name ="userName" HorizontalAlignment="Left" FontSize="15" Width ="320"  
+                     Margin ="10 0 0 0" Padding="2" TextChanged="Text_Changed1" />
+        </StackPanel>
+        <StackPanel Margin ="420 53 0 0" Width ="400" >
+            <TextBlock Margin ="0 4 0 0" FontSize="14" HorizontalAlignment="Left" >
+                E-mail Address
+            </TextBlock>
+            <TextBox Name ="email" Padding="2" 
+                     HorizontalAlignment="Left" FontSize="15"  Width ="320"  
+                     Margin ="0 0 0 0" TextChanged="Text_Changed2" />
+        </StackPanel>
+        <StackPanel Margin ="80 105 0 0" Width ="770" >
+            <StackPanel></StackPanel>
+            <Button Margin ="10 20 0 0"  Width ="120" Height="30" FontSize="15" HorizontalAlignment="Left" Name="uploadFileB" Click="UploadFile">
+                Upload File(s)
+            </Button>
+            <TextBlock Name ="info1" Margin ="10 5 0 0" FontSize="14" HorizontalAlignment="Left">
+                Uploaded files will appear below
+            </TextBlock>
+            <TextBlock Margin ="10 5 0 0" Name="fileName" FontSize="14" Visibility="Collapsed" HorizontalAlignment="Left">
+                Downloading file 1 (of 1)
+            </TextBlock>
+            <TextBlock Margin ="10 5 0 0" Name="progressShow" FontSize="14" Visibility="Collapsed" HorizontalAlignment="Left">
+                Progress:
+            </TextBlock>
+            <ProgressBar Name="progressBar1" Margin ="10 0 0 0" Height="8" Width="200" Visibility="Collapsed" HorizontalAlignment="Left" ></ProgressBar>
+            <ListBox Margin ="10 5 0 0" Name="lbFiles" FontSize="14" Height="150" Width="340" HorizontalAlignment="Left"/>
+            <ListBox Visibility ="Collapsed" Name="lbFilesPath" />
+            <ListBox Visibility ="Collapsed" Name="lbFilesName" />
+            <Button Margin ="10 5 0 0" Width ="60" Height="25" Name="clear" FontSize="13" 
+                Click="ClearFiles" Visibility="Collapsed" HorizontalAlignment="Left" >
+                Clear all
+            </Button>
+            <Button Margin ="10 5 0 0" Width ="200" Height="38" Name="sendB" FontSize="17" FontWeight="DemiBold" Click="SaveFiles" HorizontalAlignment="Left" >
+                Save and send details
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
